@@ -1,0 +1,77 @@
+body {
+    background: #642a29;
+    margin: 0;
+}
+
+header, main {
+    overflow: auto;
+    text-align: center;
+}
+
+/* nav bar is vertical at a screen width of 700px or less */
+nav {
+    background-color: #0E111A;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    width: 100%;
+    transform: translateX(100vw);
+    transition: 0.5s;
+}
+
+nav.open {
+    transform: translateX(0);
+}
+
+/* nav bar link styling */
+nav a {
+    background-color: #0E111A;
+    color: blanchedalmond;
+    padding: 14px 30px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    flex-grow: 1;
+}
+
+nav a:hover {
+    background-color: #141825;
+}
+
+nav a.active {
+    background-color: gray;
+    color: white;
+}
+
+/* menu toggler is visible and styled */
+#menuToggler {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    color: antiquewhite;
+    height: 1em;
+    width: 1em;
+    padding: 10px;
+  }
+
+@media screen and (min-width: 700px) {
+    /* menu toggler disappears after screen width is larger than 700px */
+    #menuToggler {
+        display: none;
+    }
+
+    /* nav bar is horizontal */
+    nav {
+        flex-direction: row;
+        transform: none;
+        transition: none;
+        height: auto;
+    }
+
+    nav a {
+        flex-grow: 1;
+    }
+}
